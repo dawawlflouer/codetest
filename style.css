@@ -23,7 +23,9 @@
     --border-color: #a0d2dc;
     --shadow: rgba(255, 255, 255, 0.05);
     --inset-shadow: rgb(60, 100, 110);
-    /* leave button colors unchanged */
+    /* Keep button colors same as light mode */
+    --button-bg: rgb(123, 163, 173);
+    --button-shadow: rgb(76, 122, 134);
     --icon-color: #f5f5f5;
   }
 }
