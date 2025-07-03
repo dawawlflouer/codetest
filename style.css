@@ -1,5 +1,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@600&display=swap');
 
+/* Base Variables */
+:root {
+  --bg-main: transparent;
+  --bg-panel: rgb(227, 227, 227);
+  --bg-inner: rgb(242, 242, 242);
+  --text-color: #000;
+  --border-color: rgb(76, 122, 134);
+  --shadow: gray;
+  --inset-shadow: rgb(121, 145, 141);
+  --button-bg: rgb(123, 163, 173);
+  --button-shadow: rgb(76, 122, 134);
+  --icon-color: black;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-main: transparent;
+    --bg-panel: #1e1e1e;
+    --bg-inner: #2b2b2b;
+    --text-color: #fff;
+    --border-color: rgb(150, 210, 220);
+    --shadow: #00000080;
+    --inset-shadow: #2f4f4f;
+    --button-bg: rgb(96, 142, 154);
+    --button-shadow: rgb(60, 100, 110);
+    --icon-color: white;
+  }
+}
+
 /* General */
 
 body, html {
@@ -8,9 +37,10 @@ body, html {
   height: auto;
   min-height: 0;
   display: flex;
-  justify-content: center;  /* centers content horizontally */
+  justify-content: center;
   font-family: 'Roboto Mono', monospace;
-  // background-color: #ffffff;
+  background-color: var(--bg-main);
+  color: var(--text-color);
 }
 
 #root {
@@ -21,32 +51,32 @@ body, html {
 
 button,
 button:active {
-  background-color: rgb(123,163,173);
+  background-color: var(--button-bg);
   border: none;
   width: 42px;
   height: 40px;
   border-radius: 100%;
   text-align: center;
-  box-shadow: 0.2em 0.2em rgb(76, 122, 134);
-  -webkit-box-shadow: 0.2em 0.2em rgb(76, 122, 134);
-  -moz-box-shadow: 0.2em 0.2em rgb(76, 122, 134);
+  box-shadow: 0.2em 0.2em var(--button-shadow);
+  -webkit-box-shadow: 0.2em 0.2em var(--button-shadow);
+  -moz-box-shadow: 0.2em 0.2em var(--button-shadow);
 }
 
 button:focus {
   translate: 0.2em 0.2em;
-  box-shadow: 0.2em 0.2em rgb(76, 122, 134) inset;
-  -webkit-box-shadow: 0.2em 0.2em rgb(76, 122, 134) inset;
-  -moz-box-shadow: 0.2em 0.2em rgb(76, 122, 134) inset;
+  box-shadow: 0.2em 0.2em var(--button-shadow) inset;
+  -webkit-box-shadow: 0.2em 0.2em var(--button-shadow) inset;
+  -moz-box-shadow: 0.2em 0.2em var(--button-shadow) inset;
 }
 
 /* Clock Body */
 
 .clock-container {
-  background-color: rgb(227, 227, 227); 
+  background-color: var(--bg-panel);
   width: 350px;
   border-radius: 20px;
   padding: 30px;
-  box-shadow: 10px 10px gray;
+  box-shadow: 10px 10px var(--shadow);
 }
 
 /* Display + Stop/Start/Reset Controls */
@@ -54,10 +84,10 @@ button:focus {
 #time-left {
   font-size: 70px;
   text-align: center;
-  background-color: rgb(242, 242, 242);
+  background-color: var(--bg-inner);
   padding: 20px;
   border-radius: 20px;
-  box-shadow: 3px 3px rgb(121, 145, 141) inset;
+  box-shadow: 3px 3px var(--inset-shadow) inset;
 }
 
 #display-controls {
@@ -72,11 +102,11 @@ button:focus {
   font-size: 25px;
   text-align: center;
   padding-top: 2px;
-  background-color: rgb(242, 242, 242);
+  background-color: var(--bg-inner);
   border-radius: 10px;
   height: 40px;
   flex: 2;
-  box-shadow: 3px 3px rgb(121, 145, 141) inset;
+  box-shadow: 3px 3px var(--inset-shadow) inset;
 }
 
 #timer-ssr {
@@ -101,14 +131,13 @@ button:focus {
   flex-direction: row;
   justify-content: center;
   width: 140px;
-  height:60px;
+  height: 60px;
 }
 
-.break-container, 
+.break-container,
 .session-container {
   text-align: center;
-/*   display: inline-block; */
-  border: 2px solid rgb(76, 122, 134);
+  border: 2px solid var(--border-color);
   padding: 10px;
   border-radius: 10px;
   width: 48%;
@@ -123,22 +152,12 @@ button:focus {
   margin-right: 12px;
 }
 
-.fa-play {
-  color: black;
-}
+/* Font Awesome Icons (adjust colors for dark mode) */
 
-.fa-pause {
-  color: black;
-}
-
-.fa-refresh {
-  color: black;
-}
-
-.fa-arrow-up {
-  color: black;
-}
-
+.fa-play,
+.fa-pause,
+.fa-refresh,
+.fa-arrow-up,
 .fa-arrow-down {
-  color: black;
+  color: var(--icon-color);
 }
