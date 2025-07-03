@@ -17,14 +17,13 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --bg-main: transparent;
-    --bg-panel: #3a3a3a; /* Lighter than original for contrast */
+    --bg-panel: #3a3a3a;
     --bg-inner: #4a4a4a;
     --text-color: #f0f0f0;
     --border-color: #a0d2dc;
     --shadow: rgba(255, 255, 255, 0.05);
-    --inset-shadow: rgb(60, 100, 110); /* Changed from 47,79,79 */
-    --button-bg: rgb(150, 180, 190);
-    --button-shadow: rgb(110, 150, 160);
+    --inset-shadow: rgb(60, 100, 110);
+    /* leave button colors unchanged */
     --icon-color: #f5f5f5;
   }
 }
